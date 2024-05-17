@@ -1,6 +1,6 @@
 from django.urls import path
 from .views import Home
-from .views import Home, CountryList, CountryDetail, HolidaysListCreate, HolidayDetail, RiversList, RiversDetail, CreateUserView, LoginView, VerifyUserView, AddToyRiver
+from .views import Home, CountryList, CountryDetail, HolidaysListCreate, HolidaysDetail, RiversList, RiversDetail, CreateUserView, LoginView, VerifyUserView, AddToyRiver
 
 urlpatterns = [
   path('', Home.as_view(), name='home'),
@@ -8,7 +8,7 @@ urlpatterns = [
   path('countries/', CountryList.as_view(), name='country-list'),
   path('countries/<int:id>/', CountryDetail.as_view(), name='country-detail'),
   path('countries/<int:country_id>/holidays/', HolidaysListCreate.as_view(),        name='holidays-list-create'),
-  path('countries/<int:country_id>/holiday/<int:id>/', HolidayDetail.as_view(), name='holidays-detail'),
+  path('countries/<int:country_id>/holiday/<int:id>/', HolidaysDetail.as_view(), name='holidays-detail'),
   path('rivers/', RiversList.as_view(), name='river-list'),
   path('rivers/<int:id>/', RiversDetail.as_view(), name='river-detail'),
   path('rivers/<int:river>/add_river/<int:river_id>/', AddToyRiver.as_view(), name='add-toy-to-cat'),

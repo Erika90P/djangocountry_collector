@@ -16,17 +16,22 @@ import environ
 import dj_database_url
 import django_heroku
 
+
 # catcollector/settings.py
 
 # Initialise environment variables
 env = environ.Env()
 environ.Env.read_env()
 
+# Build paths inside the project like this: BASE_DIR / 'subdir'.
+BASE_DIR = Path(__file__).resolve().parent.parent
+
 # catcollector/settings.py
 
 # These are required
 DATABASE_URL=env('DATABASE_URL')
 SECRET_KEY=env('SECRET_KEY')
+
 
 # These are not required.
 # If you want to connect locally to the database you may need them
@@ -38,19 +43,11 @@ SECRET_KEY=env('SECRET_KEY')
 # PGPORT=env('PGPORT')
 # PGUSER=env('PGUSER')
 
-
-
-
-
-# Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent
-
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-ad=%of0s4)&)ggg1npjku&#u7a4r&$9-)yj0^ob71kfp9824d5'
+# SECRET_KEY = 'django-insecure-ad=%of0s4)&)ggg1npjku&#u7a4r&$9-)yj0^ob71kfp9824d5'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
